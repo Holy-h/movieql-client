@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   HashRouter as Router,
   Route,
-  Redirect
 } from "react-router-dom";
 import { ApolloProvider } from "react-apollo";
 import client from "./apolloClient";
@@ -17,7 +16,6 @@ class App extends Component {
           <>
             <Route path="/" exact component={Home}/>
             <Route path="/detail/:movieId" component={Detail}/>
-            <Redirect from="*" to="/" />
           </>
         </Router>
       </ApolloProvider>
