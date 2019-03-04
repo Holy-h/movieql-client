@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {Query} from "react-apollo";
 import {HOME_PAGE} from "./queries";
+import Movie from "./Movie";
 
 const Container = styled.div `
   display: grid;
@@ -16,8 +17,14 @@ const Home = () => (
       {({ loading, data, error }) => {
         if(loading) return <span>loading...</span>;
         if(error) return <span>error!!</span>;
-        return data.getmovielistAPI.map(movie =>
-          <h2 key={movie.id}>{movie.title} / {movie.rating}</h2>
+        return data.get_movielist.map(movie =>
+          <Movie
+            id={movie.id}
+            key={movie.id}
+            poster={movie.medium_cover_image}
+            title={movie.title}
+            rating={movie.rating}
+          />
         ) 
       }}
     </Query>
