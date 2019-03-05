@@ -16,7 +16,7 @@ class App extends Component {
         <Router>
           <main>
             <Route path="/" exact component={Home}/>
-            <Route path="/detail/:movieId" component={Detail}/>
+            <Route path="/details/:movieId" component={Detail}/>
           </main>
         </Router>
         <GlobalStyle/>

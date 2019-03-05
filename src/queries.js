@@ -7,9 +7,32 @@ export const HOME_PAGE = gql`
       title
       genres
       rating
-      summary
+      description_intro
       language
       medium_cover_image
     }
   }
-`
+`;
+
+export const DETAIL_PAGE = gql`
+  query getMovieDetails($movieId: Int!){
+    get_movie(id: $movieId){
+      id
+      title
+      genres
+      rating
+      description_intro
+      language
+      medium_cover_image
+    }
+    get_moviesuggestion(id: $movieId){
+      id
+      title
+      genres
+      rating
+      description_intro
+      language
+      medium_cover_image
+    }
+  }
+`;
